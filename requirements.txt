@@ -1,0 +1,8 @@
+torch
+torchvision
+pandas
+tabulate
+safetensors
+matplotlib
+tqdm
+requests
