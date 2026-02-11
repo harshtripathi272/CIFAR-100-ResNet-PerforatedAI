@@ -1,1 +1,4 @@
 venv
+data/cifar-100-python.tar.gz
+data/*
+

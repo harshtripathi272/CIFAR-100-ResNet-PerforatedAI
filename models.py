@@ -45,7 +45,10 @@ def get_model(model_name, num_classes=100, pretrained=True):
                 print(f"Error loading pretrained weights: {e}")
                 print("Proceeding with random weights (WARNING: Performance will be poor)")
 
-        # 4. Replace FC layer for transfer learning
+        # 4. Initialize PAI tracker for graphing and saving
+        model = UPA.initialize_pai(model, save_name="PAI_ResNet18_Perforated")
+
+        # 5. Replace FC layer for transfer learning
         # Accessing the internal FC layer of the wrapped model might depend on implementation
         # The wrapper exposes .fc
         model.fc = nn.Linear(model.fc.in_features, num_classes)

@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 import pandas as pd
 
@@ -24,7 +25,7 @@ def main():
         print(f"Evaluating {model}")
         print(f"{'='*40}")
         
-        cmd = f"python train.py --model {model} --epochs {epochs} --batch_size {batch_size} --lr {lr}"
+        cmd = f"{sys.executable} train.py --model {model} --epochs {epochs} --batch_size {batch_size} --lr {lr}"
         run_command(cmd)
         
     print("\nExperiments completed.")
